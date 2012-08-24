@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount HtmlText::Engine => "/html_text"
+  mount C2HtmlText::Engine => "/c2_html_text"
 end

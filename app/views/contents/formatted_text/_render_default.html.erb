@@ -1,2 +1,1 @@
-<% require 'RedCloth' %>
-<%=raw RedCloth.new(content.data, [:filter_html]).to_html %>
+<%=raw content.convert_to_html %>

@@ -13,4 +13,16 @@ class FormattedText < Content
     self.kind = Kind.where(:name => 'Text').first
   end
 
+  # Generate the HTML for the content
+  def render_details
+    require 'RedCloth'
+    {:html => self.convert_to_html()}
+  end
+
+  def convert_to_html
+    require 'RedCloth'
+    formatted = RedCloth.new(self.data, [:filter_html])
+    return formatted.to_html
+  end
+
 end
